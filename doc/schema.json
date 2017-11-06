@@ -1,0 +1,320 @@
+﻿{
+	"Employee": {
+		"EmpCode": { "pk": true },
+		"CompanyCode": {},
+		"IsPartime": {},
+		"EmploymentStartDate": { "type": "Date" },
+		"EmploymentEndDate": { "type": "Date" },
+		"EmploymentType": {
+			"type": "Status",
+			"desc": "0:contractor,1:clerk"
+		},
+		"SurName": {},
+		"OtherName": {},
+		"FullChineseName": {},
+		"Gender": {
+			"type": "Bit",
+			"desc": "0:Female, 1:Male"
+		},
+		"MobilePhone": {
+			"type": "Text",
+			"size": 32
+		},
+		"HomePhone": {
+			"type": "Text",
+			"size": 32
+		},
+		"BirthDate": { "type": "Date" },
+		"Email": {},
+		"ICN": {},
+		"Passport": {},
+		"Country": {},
+		"MaritalStatus": {},
+		"SpouseName": {},
+		"SpouseICN": {},
+		"SpousePassport": {},
+		"SpouseCountry": {},
+		"ResidentialAddress": {
+			"type": "Text",
+			"size": 256
+		},
+		"PostalAddress": {
+			"type": "Text",
+			"size": 256
+		},
+		"BankAccount": {},
+		"EmpTaxFileNum": {},
+		"Title": {},
+		"PaySlipDeliveryDay": { "type": "Status" },
+
+		"IsActive": {},
+		"CreateDate": {},
+		"UpdateDate": {}
+	},
+	"Company": {
+		"CompanyCode": {
+			"pk": true
+		},
+		"CompanyName": {},
+		"Address": {
+			"type": "Text",
+			"size": 256
+		},
+		"Phone": {
+			"type": "Text",
+			"size": 32
+		},
+		"Fax": {
+			"type": "Text",
+			"size": 32
+		},
+		"PostalAddress": {
+			"type": "Text",
+			"size": 256
+		},
+		"EmprTaxFileNum": {},
+		"ContactPersonEmail": {},
+		"CurrencyCode": {},
+		"PayDay": {
+			"type": "Status",
+			"desc": "Day of month / week"
+		},
+		"PeriodType": {
+			"type": "Status",
+			"desc": "0:Daily, 1:Weekly, 2:Monthly, 3:Annual"
+		},
+
+		"IsActive": {},
+		"CreateDate": {},
+		"UpdateDate": {}
+	},
+	"EmployeePackage": {
+		"PackageUid": { "pk": true },
+		"PackageName": {},
+		"EmpCode": {},
+		"CompanyCode": {},
+		"StartDate": { "desc": "Current salary level package start date" },
+		"EndDate": { "desc": "Current salary level package end date" },
+
+		"IsActive": {},
+		"CreateDate": {},
+		"UpdateDate": {}
+	},
+	"PayItemDisplay": {
+		"ReportItemId": { "pk": true },
+		"TemplateCode": {},
+		"CompanyCode": {},
+		"ViewName": {},
+		"DisplayName": {},
+		"Description": {},
+		"DisplayIndex": { "type": "Int" },
+		"Category": {
+			"type": "Text",
+			"Size": 128,
+			"desc": "Addition, Deduction, Services Fee Paid by Client, etc."
+		},
+		"Visible": { "type": "Bit" },
+
+		"IsActive": {},
+		"CreateDate": {},
+		"UpdateDate": {}
+	},
+	"PayItemTemplate": {
+		"TemplateCode": { "pk": true },
+		"FunctionName": { "desc": "if blank, TemplateCode will be filled in here" },
+		"DisplayName": {},
+		"Description": {},
+		"CompanyCode": {},
+		"PayType": {
+			"type": "Status",
+			"desc": "-2:Employee Contribution, -1:deduction, 0:Employer Contribution, 1:Earning"
+		},
+		"Amount": {},
+		"Function": {
+			"type": "Text",
+			"size": 2048
+		},
+
+		"IsActive": {},
+		"CreateDate": {},
+		"UpdateDate": {}
+	},
+	"PackageItem": {
+		"PackageItemUid": { "pk": true },
+		"TemplateCode": {},
+		"CompanyCode": {},
+		"Amount": { "desc": "overwrite template amount" },
+		"Function": {
+			"type": "Text",
+			"size": 2048,
+			"desc": "overwrite template function"
+		},
+		"EffectiveDate": {},
+		"PackageUid": {},
+
+		"IsActive": {},
+		"CreateDate": {},
+		"UpdateDate": {}
+	},
+	"PayItem": {
+		"PayItemUid": { "pk": true },
+		"TemplateCode": {},
+		"Amount": { "desc": "overwrite template amount" },
+		"Function": {
+			"type": "Text",
+			"size": 2048,
+			"desc": "overwrite template function"
+		},
+		"EmpCode": {},
+		"CompanyCode": {},
+		"EffectiveDate": {},
+		"StartDate": {},
+		"EndDate": {},
+
+		"IsActive": {},
+		"CreateDate": {},
+		"UpdateDate": {}
+	},
+	"Period": {
+		"PeriodCode": { "pk": true },
+		"PeriodType": {
+			"type": "Status",
+			"desc": "0:Daily, 1:Weekly, 2:Monthly, 3:Annual"
+		},
+		"CompanyCode": {},
+		"StartDate": {},
+		"EndDate": {},
+
+		"IsActive": {},
+		"CreateDate": {},
+		"UpdateDate": {}
+	},
+	"PayrollTrans": {
+		"TransUid": { "pk": true },
+		"PayItemUid": { "desc": "PackageItemUid / PayItemUid" },
+		"PeriodCode": {},
+		"EmpCode": {},
+		"CompanyCode": {},
+		"Amount": { "desc": "Calculated amount" },
+		"PayrollStatus": { "desc": "-1:cancelled, 0:in progress, 1:committed" },
+		"EffectiveDate": {},
+		"ItemType": { "desc": "1:package item, 2:pay item" },
+
+		"IsActive": {},
+		"CreateDate": {},
+		"UpdateDate": {}
+	},
+	"PayrollReport": {
+		"ReportUid": { "pk": true },
+		"TransUid": {},
+		"ViewName": {
+			"type": "Text",
+			"size": 128
+		},
+		"PeriodCode": {},
+		"EmpCode": {},
+		"FullChineseName": {},
+		"CompanyCode": {},
+		"DisplayName": {},
+		"Description": {},
+		"DisplayIndex": { "type": "Int" },
+		"Category": {
+			"type": "Text",
+			"size": 128
+		},
+		"FunctionName": {},
+		"Amount": {},
+		"ItemType": { "type": "Status" },
+		"PayType": {
+			"type": "Status",
+			"desc": "-2:Employee Contribution, -1:deduction, 0:Employer Contribution, 1:Earning"
+		},
+		"StartDate": {},
+		"EndDate": {},
+
+		"IsActive": {},
+		"CreateDate": {},
+		"UpdateDate": {}
+	},
+	"Workload": {
+		"WorkloadUid": { "pk": true },
+		"EmpCode": {},
+		"CompanyCode": {},
+		"StartTime": {},
+		"EndTime": {},
+		"Hours": { "type": "Num" },
+		"WorkType": {
+			"desc": "-1:leave, 1:overwork"
+		},
+
+		"IsActive": {},
+		"CreateDate": {},
+		"UpdateDate": {}
+	},
+	"MessageQueue": {
+		"MsgUid": { "pk": true },
+		"PeriodCode": {},
+		"EmpCode": {},
+		"CompanyCode": {},
+		"MsgType": {"desc": "1:report request, 2:email request"},
+		"MsgContent": {
+			"type": "Text",
+			"size": 2048
+		},
+		"Email": {},
+		"MsgStatus": { "desc": "-1:error, 0:pending, 1:ready, 2:delivered" },
+		"DeliverStartDate": {}
+	},
+	"GlobalSettings": {
+		"SettingId": { "pk": true },
+		"MpfThreshold": {
+			"type": "Money",
+			"desc": "30000"
+		},
+		"MpfPercent": {
+			"type": "Money",
+			"desc": "5%"
+		},
+		"OvertimeMinWagePerHour": {
+			"type": "Money",
+			"desc": "34.5"
+		},
+		"LongServiceMinPerHour": {
+			"type": "Money",
+			"desc": "22.5"
+		},
+		"LongServiceMaxTotal": {
+			"type": "Money",
+			"desc": "390000"
+		},
+
+		"IsActive": {},
+		"CreateDate": {},
+		"UpdateDate": {}
+	},
+	"User": {
+		"UserCode": { "pk": true },
+		"UserPwd": {},
+
+		"IsActive": {},
+		"CreateDate": {},
+		"UpdateDate": {}
+	},
+	"UserRole": {
+		"UserCode": { "pk": true },
+		"RoleId": {},
+
+		"IsActive": {},
+		"CreateDate": {},
+		"UpdateDate": {}
+	},
+	"Role": {
+		"RoleId": { "pk": true },
+		"RoleName": {},
+		"Level": { "type": "Status" },
+
+		"IsActive": {},
+		"CreateDate": {},
+		"UpdateDate": {}
+	}
+}
