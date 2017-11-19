@@ -1,0 +1,17 @@
+#PayItemTemplate,,,,,,,
+TemplateCode,FunctionName,DisplayName,Description,CompanyCode,PayType,Amount,Function
+Ltd_salary_monthly,salary,Salary,Employee's earning,Ltd,1,,
+Ltd_mgmt_monthly,mgmt,Payroll Fee,Management fee of cmp1 employees,Ltd,-1,,
+Ltd_mpf_monthly,mpf,Employee's MPF Contribution (Mandatory),Employee's MPF Contribution (Mandatory),Ltd,-1,,?(salary>30000)?1500:(salary * MpfPercent)
+Ltd_empf_monthly,empf,Employer's MPF Contribution (Mandatory),Employer's MPF Contribution (Mandatory),Ltd,0,,?(salary>30000)?1500:(salary * MpfPercent)
+Ltd_mobile_allowance,mallowance,Mobile Allowance,Mobile Allowance,Ltd,1,100,
+Ltd_netpay_monthly,netpay,Net Pay,Net Pay,Ltd,0,,?g('salary') - g('mpf')
+Ltd_invoice_total_monthly,total,Invoice Total,Invoice Total,Ltd,0,,?g('salary') + g('empf') + g('mgmt')
+Ltd_pay_taxi,taxi,Taxi Allowance,Taxi Allowance,Ltd,1,10,
+TFHK_salary_monthly,salary,Salary,Employee's earning,TFHK,1,,
+TFHK_mgmt_monthly,mgmt,Payroll Fee,Management fee of cmp1 employees,TFHK,-1,,
+TFHK_mpf_monthly,mpf,Employee's MPF Contribution (Mandatory),Employee's MPF Contribution (Mandatory),TFHK,-1,,?(salary>30000)?1500:(salary * MpfPercent)
+TFHK_empf_monthly,empf,Employer's MPF Contribution (Mandatory),Employer's MPF Contribution (Mandatory),TFHK,2,,?(salary>30000)?1500:(salary * MpfPercent)
+TFHK_mobile_allowance,mallowance,Mobile Allowance,Mobile Allowance,TFHK,1,100,
+TFHK_netpay_monthly,netpay,Net Pay,Net Pay,TFHK,0,,?g('salary') - g('mpf')
+TFHK_invoice_total_monthly,total,Invoice Total,Invoice Total,TFHK,0,,?g('salary') + g('empf') + g('mgmt')

@@ -1,0 +1,32 @@
+#PayItemDisplay,,,,,,,,
+ReportItemId,TemplateCode,CompanyCode,ViewName,DisplayName,Description,DisplayIndex,Category,Visible
+1,Ltd_salary_monthly,Ltd,Report,Salary,Relevant Income,1,,1
+2,Ltd_mgmt_monthly,Ltd,Report,,,2,,1
+3,Ltd_mpf_monthly,Ltd,Report,,,3,Salary Payment,1
+4,Ltd_empf_monthly,Ltd,Report,,,4,Salary Payment,1
+5,Ltd_mobile_allowance,Ltd,Report,,,5,,1
+6,Ltd_netpay_monthly,Ltd,Report,,,6,,1
+7,Ltd_invoice_total_monthly,Ltd,Report,,,7,,1
+8,Ltd_salary_monthly,Ltd,Report,Relevant Income,Salary,8,Salary Payment,1
+9,TFHK_salary_monthly,TFHK,Report,,,1,Salary Payment,1
+10,TFHK_mgmt_monthly,TFHK,Report,,,2,,1
+11,TFHK_mpf_monthly,TFHK,Report,,,3,Salary Payment,1
+12,TFHK_empf_monthly,TFHK,Report,,,4,Salary Payment,1
+13,TFHK_mobile_allowance,TFHK,Report,,,5,,1
+14,TFHK_netpay_monthly,TFHK,Report,,,6,,1
+15,TFHK_invoice_total_monthly,TFHK,Report,,,7,,1
+16,TFHK_salary_monthly,TFHK,Report,Relevant Income,Salary,8,Salary Payment,1
+17,Ltd_salary_monthly,Ltd,Payslip,,,1,,1
+18,Ltd_mgmt_monthly,Ltd,Payslip,,,2,,0
+19,Ltd_mpf_monthly,Ltd,Payslip,,,3,Deduction,1
+20,Ltd_empf_monthly,Ltd,Payslip,,,4,,0
+21,Ltd_mobile_allowance,Ltd,Payslip,,,5,Addition,1
+22,Ltd_netpay_monthly,Ltd,Payslip,,,6,Addition,1
+23,Ltd_invoice_total_monthly,TFHK,Payslip,,,7,,0
+24,TFHK_salary_monthly,TFHK,Payslip,,,1,,1
+25,TFHK_mgmt_monthly,TFHK,Payslip,,,2,,0
+26,TFHK_mpf_monthly,TFHK,Payslip,,,3,Deduction,1
+27,TFHK_empf_monthly,TFHK,Payslip,,,4,,0
+28,TFHK_mobile_allowance,TFHK,Payslip,,,5,Addition,1
+29,TFHK_netpay_monthly,TFHK,Payslip,,,6,Addition,1
+30,TFHK_invoice_total_monthly,TFHK,Payslip,,,7,,0
